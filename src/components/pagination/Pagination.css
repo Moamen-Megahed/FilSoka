@@ -1,0 +1,27 @@
+.pagination-container {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  margin: auto;
+  font-size: 30px;
+  width: 990px;
+  border-top: 2px solid #f0705a;
+}
+
+.pagination-container .prev,
+.pagination-container .next {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.prev.disabled,
+.next.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.prev span,
+.next span {
+  margin: 0 5px;
+}

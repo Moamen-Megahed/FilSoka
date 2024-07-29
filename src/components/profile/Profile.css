@@ -1,0 +1,62 @@
+.profile {
+  min-height: calc(100vh - 140px);
+}
+.profile-header {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.profile-header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.profile-header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+.profile-header p {
+  font-size: 16px;
+  margin: 5px 0 0;
+  color: rgb(179, 179, 179);
+}
+.account-info {
+  margin-top: 30px;
+  padding: 20px 25px;
+  background-color: #2c2c2c;
+  width: fit-content;
+  margin: 30px auto 0;
+  gap: 20px;
+  display: flex;
+  border-radius: 8px;
+}
+.followers,
+.likes {
+  padding: 10px;
+  background-color: #141414;
+  font-size: 20px;
+  border-radius: 4px;
+}
+.account-info strong {
+  color: #f0705a;
+}
+.change-img-container {
+  text-align: center;
+}
+.change-img-container h2 {
+  margin-bottom: 20px;
+}
+.change-img-container .upload-btn,
+.change-img-container .cancel-btn {
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+  font-size: 20px;
+}
+.change-img-container .upload-btn {
+  color: #0095f6;
+}

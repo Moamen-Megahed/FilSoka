@@ -1,0 +1,112 @@
+.post {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #141414;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 8px;
+  transition: 0.3s;
+  position: relative;
+}
+.post .optionsIcon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.post-image {
+  max-height: 300px;
+  max-width: 520px;
+  overflow: hidden;
+}
+.post-image img {
+  width: 100%;
+  transition: 0.3s;
+}
+.post-info {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.post-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.post-title:hover {
+  text-decoration: underline;
+}
+.post-source {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.post-source img {
+  width: 50px;
+  border-radius: 50%;
+}
+.profile-name {
+  font-size: 15px;
+  font-weight: bold;
+}
+.post-date {
+  font-size: 15px;
+  color: #ffffff78;
+}
+.post-likes {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 5px;
+  /* color: #009688; */
+}
+.post-likes svg {
+  color: #f0705a;
+  font-size: 30px;
+  cursor: pointer;
+}
+.options {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.options .edit-btn,
+.options .delete-btn {
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+  font-size: 20px;
+}
+.options .delete-btn {
+  color: #f0705a;
+}
+.warning-msg {
+  text-align: center;
+}
+.warning-msg h2 {
+  margin-bottom: 20px;
+}
+.warning-msg p {
+  color: #b6b6b6;
+  margin-bottom: 20px;
+}
+
+.warning-msg .delete-btn,
+.warning-msg .cancel-btn {
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+  font-size: 20px;
+}
+.warning-msg .delete-btn {
+  color: #f0705a;
+}
