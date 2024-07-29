@@ -84,7 +84,7 @@ export default function SignUp() {
                 src={
                   img
                     ? URL.createObjectURL(img)
-                    : "src/assets/blank-profile-picture-973460_1280.webp"
+                    : "/blank-profile-picture-973460_1280.webp"
                 }
                 alt="blank-image"
               />
