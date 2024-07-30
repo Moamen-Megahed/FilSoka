@@ -164,7 +164,6 @@ export default function PostForm({
   const [img, setImg] = useState(null);
   const [imgPreview, setImgPreview] = useState(thePrevImg || null);
   const [error, setError] = useState(false);
-
   useEffect(() => {
     if (thePrevTitle) setTitleInput(thePrevTitle);
     if (thePrevArticle) setArticleInput(thePrevArticle);
@@ -197,7 +196,7 @@ export default function PostForm({
                 await addDoc(collection(db, "posts"), {
                   uid: currentUser.uid,
                   photoURL: currentUser.photoURL,
-                  displayName: currentUser.displayName,
+                  displayName: currentUser.uName,
                   titleInput,
                   articleInput,
                   img: downloadURL,
@@ -221,7 +220,7 @@ export default function PostForm({
           await addDoc(collection(db, "posts"), {
             uid: currentUser.uid,
             photoURL: currentUser.photoURL,
-            displayName: currentUser.displayName,
+            displayName: currentUser.uName,
             titleInput,
             articleInput,
             timestamp: serverTimestamp(),
@@ -269,6 +268,7 @@ export default function PostForm({
             placeholder="Title"
             value={titleInput}
             onChange={(e) => setTitleInput(e.target.value)}
+            autoFocus
           />
           <textarea
             value={articleInput}
