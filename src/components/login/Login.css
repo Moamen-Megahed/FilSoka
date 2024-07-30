@@ -136,3 +136,6 @@
   width: 60px;
   border-radius: 8px;
 }
+.login-right .error {
+  color: #f0705a;
+}
