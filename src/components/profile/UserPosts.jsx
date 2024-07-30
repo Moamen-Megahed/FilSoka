@@ -16,7 +16,6 @@ import Post from "../posts/Post";
 export default function UserPosts() {
   const params = useParams();
 
-  const { currentUser, loadingUser, loadingPosts } = useContext(AuthContext);
   const { posts } = useContext(AuthContext);
 
   // console.log(currentUser.id == params.userId);
@@ -42,10 +41,6 @@ export default function UserPosts() {
   //   };
   //   currentUser.uid && getUsersPost();
   // }, [currentUser.uid]);
-
-  if (loadingUser || loadingPosts) {
-    return <div style={{ color: "white" }}>Loading...</div>;
-  }
 
   return (
     <div className="posts">

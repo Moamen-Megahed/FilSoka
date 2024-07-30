@@ -27,6 +27,7 @@ export default function PostDetails() {
   //         console.log("No such document!");
   //       }
   //     } catch (error) {
+
   //       console.error("Error fetching post: ", error);
   //     } finally {
   //       setLoading(false);

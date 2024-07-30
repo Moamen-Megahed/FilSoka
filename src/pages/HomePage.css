@@ -1,3 +1,11 @@
 .home {
   min-height: calc(100vh - 159px);
 }
+.not-responsive {
+  display: none;
+  text-align: center;
+  color: white;
+  margin-top: 300px;
+  font-size: 30px;
+  color: #f0705a;
+}

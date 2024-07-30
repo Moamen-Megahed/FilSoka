@@ -269,6 +269,8 @@ export default function PostForm({
             value={titleInput}
             onChange={(e) => setTitleInput(e.target.value)}
             autoFocus
+            minLength={3}
+            maxLength={100}
           />
           <textarea
             value={articleInput}

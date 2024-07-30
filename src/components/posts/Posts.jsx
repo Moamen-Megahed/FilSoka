@@ -7,13 +7,13 @@ import { AuthContext } from "../../context/AuthContext";
 import Pagination from "../pagination/Pagination";
 
 export default function Posts() {
-  const { posts, loadingPosts } = useContext(AuthContext);
+  const { posts } = useContext(AuthContext);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 5;
 
-  if (loadingPosts) {
-    return <div style={{ color: "white" }}>Loading...</div>;
-  }
+  // if (loadingPosts) {
+  //   return <div style={{ color: "white" }}>Loading...</div>;
+  // }
 
   const sortedPosts = posts.sort((a, b) => b.data.timestamp - a.data.timestamp);
 

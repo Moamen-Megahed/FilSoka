@@ -440,14 +440,14 @@ export default function Profile() {
         <h2>{user.uName}</h2>
         <p>Joined At {creationTime}</p>
 
-        <div className="account-info">
+        {/* <div className="account-info">
           <div className="followers">
             <strong>10k</strong> followers
           </div>
           <div className="likes">
             <strong>30k</strong> likes
           </div>
-        </div>
+        </div> */}
       </div>
 
       <UserPosts />
