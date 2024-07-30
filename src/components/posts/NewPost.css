@@ -109,6 +109,8 @@
 .formImg {
   width: 200px;
   position: relative;
+  max-height: 130px;
+  overflow: hidden;
 }
 .formImg img {
   width: 100%;

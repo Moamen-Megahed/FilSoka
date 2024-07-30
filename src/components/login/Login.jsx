@@ -50,7 +50,7 @@ export default function Login() {
           <input type="submit" value="Login" />
         </form>
         <Link to="/signup">Not a user? Create account</Link>
-        {err && <span>Something Went Wrong</span>}
+        {err && <span>Maybe your email or password is incorrect</span>}
       </div>
     </div>
   );

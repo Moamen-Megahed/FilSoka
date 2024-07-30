@@ -80,7 +80,7 @@ import {
 } from "firebase/firestore";
 import { AuthContext } from "../../context/AuthContext";
 import { db } from "../../firebase";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "../UI/Modal";
 import PostForm from "./PostForm";
 
@@ -90,6 +90,7 @@ export default function Post({ post }) {
   const [liked, setLiked] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [warningMsg, setWarningMsg] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unSub = onSnapshot(
@@ -106,11 +107,14 @@ export default function Post({ post }) {
   }, [likes, currentUser?.uid]);
 
   const likePost = async () => {
+    if (!currentUser) {
+      navigate("/login");
+    }
     if (liked) {
-      await deleteDoc(doc(db, "posts", post.id, "likes", currentUser.uid));
+      await deleteDoc(doc(db, "posts", post?.id, "likes", currentUser?.uid));
     } else {
-      await setDoc(doc(db, "posts", post.id, "likes", currentUser.uid), {
-        userId: currentUser.uid,
+      await setDoc(doc(db, "posts", post?.id, "likes", currentUser?.uid), {
+        userId: currentUser?.uid,
       });
     }
   };
@@ -140,6 +144,7 @@ export default function Post({ post }) {
             {new Date(post.data.timestamp?.toDate()).toLocaleString()}
           </span>
         </div>
+
         <div className="post-likes" onClick={likePost}>
           {liked ? <AiFillLike /> : <AiOutlineLike />}{" "}
           {likes.length > 0 && <span>{likes.length}</span>}

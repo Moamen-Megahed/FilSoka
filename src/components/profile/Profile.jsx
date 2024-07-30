@@ -381,7 +381,7 @@ export default function Profile() {
     }
   };
 
-  console.log(currentUser?.creationTime);
+  // console.log(currentUser?.creationTime);
   return (
     <div className="profile">
       <div className="profile-header">
