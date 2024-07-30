@@ -87,7 +87,8 @@
   border: 2px solid transparent;
 }
 .login-right input[type="text"]:focus-within,
-.login-right input[type="password"]:focus-within {
+.login-right input[type="password"]:focus-within,
+.login-right input[type="email"]:focus-within {
   border: 2px solid white;
 }
 .login-right input[type="submit"] {
@@ -120,13 +121,16 @@
 .top-form {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
 }
 .top-form label {
   cursor: pointer;
 }
 .top-form input {
   display: none;
+}
+.top-form p {
+  font-size: 25px;
 }
 .blank-image {
   width: 60px;

@@ -6,6 +6,7 @@ import SignUpPage from "./pages/SignUpPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import PostDetailsPage from "./pages/PostDetailsPage.jsx";
 import Footer from "./components/footer/Footer.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/profile/:userId" element={<ProfilePage />}></Route>
         <Route path="/posts/:postId" element={<PostDetailsPage />}></Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       {/* <Footer /> */}
     </>

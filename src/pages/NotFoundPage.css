@@ -1,0 +1,25 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  gap: 10px;
+}
+
+.not-found-text {
+  font-size: 40px;
+  color: #f0705a;
+  text-align: center;
+}
+.redirect span {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.redirect a {
+  font-size: 20px;
+  font-weight: bold;
+}
+.redirect a:hover {
+  text-decoration: underline;
+}

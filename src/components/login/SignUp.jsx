@@ -78,6 +78,7 @@ export default function SignUp() {
         <h2>Sign Up</h2>
         <form onSubmit={submitHandler}>
           <div className="top-form">
+            <p>Upload Your Picture :</p>
             <label htmlFor="blankImage">
               <img
                 className="blank-image"
