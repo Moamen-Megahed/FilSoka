@@ -20,8 +20,8 @@
 }
 .post-image {
   max-height: 300px;
-  max-width: 520px;
   overflow: hidden;
+  width: 500px;
 }
 .post-image img {
   width: 100%;
