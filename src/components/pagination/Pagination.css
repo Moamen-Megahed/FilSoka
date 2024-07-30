@@ -2,8 +2,8 @@
   display: flex;
   padding: 20px;
   justify-content: space-between;
-  margin: auto;
-  font-size: 30px;
+  margin: 0 auto 10px;
+  font-size: 20px;
   width: 990px;
   border-top: 2px solid #f0705a;
 }
@@ -24,4 +24,7 @@
 .prev span,
 .next span {
   margin: 0 5px;
+}
+.pagination-container svg {
+  margin-top: 3px;
 }

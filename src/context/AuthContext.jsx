@@ -90,7 +90,7 @@ export const AuthContextProvider = ({ children }) => {
     const postRef = doc(db, "posts", postId);
     await deleteDoc(postRef);
   };
-
+  console.log(currentUser);
   return (
     <AuthContext.Provider
       value={{

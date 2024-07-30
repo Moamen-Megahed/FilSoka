@@ -49,6 +49,7 @@
 .post-source img {
   width: 50px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .profile-name {
   font-size: 15px;

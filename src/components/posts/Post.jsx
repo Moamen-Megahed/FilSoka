@@ -130,7 +130,9 @@ export default function Post({ post }) {
         </Link>
 
         <div className="post-source">
-          <img src={post.data.photoURL} alt="" />
+          <Link to={"/profile/" + post.data.uid}>
+            <img src={post.data.photoURL} alt="" />
+          </Link>
           <Link to={"/profile/" + post.data.uid}>
             <span className="profile-name">{post.data.displayName}</span>
           </Link>
