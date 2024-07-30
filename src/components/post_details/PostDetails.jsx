@@ -53,7 +53,9 @@ export default function PostDetails() {
       </div>
       <div className="postDetails-body">
         <div className="postDetails-publisher">
-          <img src={filteredPost?.photoURL} alt="profile-image" />
+          <Link to={"/profile/" + filteredPost?.uid}>
+            <img src={filteredPost?.photoURL} alt="profile-image" />
+          </Link>
           <span>
             <Link to={"/profile/" + filteredPost?.uid}>
               <strong>{filteredPost?.displayName} </strong>

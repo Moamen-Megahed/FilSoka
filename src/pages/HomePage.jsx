@@ -29,7 +29,6 @@ export default function HomePage() {
   const addArticleHandler = (bool) => {
     setIsAdding(bool);
   };
-  const portalElement = document.getElementById("overlays");
 
   return (
     <div className="home">
@@ -37,7 +36,7 @@ export default function HomePage() {
       <Posts />
       {ReactDOM.createPortal(
         <div className="not-responsive">{`Sorry It's Not Responsive Yet :(`}</div>,
-        portalElement
+        document.getElementById("overlays")
       )}
     </div>
   );
