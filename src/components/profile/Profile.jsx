@@ -294,13 +294,6 @@ import { db, storage } from "../../firebase";
 import Modal from "../UI/Modal";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-function formatDate(date) {
-  const day = date.getDate();
-  const month = date.getMonth() + 1; // Months are zero-indexed
-  const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
-}
-
 export default function Profile() {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
   const [user, setUser] = useState({});
@@ -308,7 +301,12 @@ export default function Profile() {
   const [error, setError] = useState(false);
   const params = useParams();
   const meta = currentUser?.metadata;
-  let creationTime = new Date(Object(meta).creationTime);
+  const milliseconds =
+    user?.creationTime?.seconds * 1000 +
+    user?.creationTime?.nanoseconds / 1000000;
+  const date = new Date(milliseconds);
+
+  const creationTime = date.toLocaleDateString();
 
   // changing image
   const [isChangeImg, setIsChangeImg] = useState(false);
@@ -328,8 +326,6 @@ export default function Profile() {
 
     fetchUser();
   }, [params.userId]);
-
-  creationTime = formatDate(creationTime);
 
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
@@ -366,7 +362,7 @@ export default function Profile() {
             });
             await Promise.all(updatePromises);
 
-            // تحديث المستخدم في السياق
+            // Update in the context
             setCurrentUser((prevUser) => ({
               ...prevUser,
               photoURL: downloadURL,
@@ -385,7 +381,7 @@ export default function Profile() {
     }
   };
 
-  // console.log(user.photoURL);
+  console.log(currentUser?.creationTime);
   return (
     <div className="profile">
       <div className="profile-header">
@@ -442,6 +438,7 @@ export default function Profile() {
           />
         )}
         <h2>{user.uName}</h2>
+        <p>Joined At {creationTime}</p>
 
         <div className="account-info">
           <div className="followers">
