@@ -10,7 +10,7 @@ export default function PostDetails() {
   const { posts } = useContext(AuthContext);
 
   const filteredPost = posts.filter((p) => p.id == postId)[0]?.data;
-  console.log(filteredPost);
+  // console.log(filteredPost);
   // console.log(posts);
   // const [post, setPost] = useState(null);
   // const [loading, setLoading] = useState(true);

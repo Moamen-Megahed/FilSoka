@@ -21,8 +21,8 @@ export default function Posts() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-  console.log(currentPosts);
-  console.log(posts);
+  // console.log(currentPosts);
+  // console.log(posts);
 
   return (
     <>

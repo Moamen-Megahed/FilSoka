@@ -385,7 +385,7 @@ export default function Profile() {
     }
   };
 
-  console.log(user.photoURL);
+  // console.log(user.photoURL);
   return (
     <div className="profile">
       <div className="profile-header">

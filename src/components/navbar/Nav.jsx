@@ -114,10 +114,8 @@ export default function Nav() {
     dropdownRef.current.classList.toggle("show-flex");
   };
   const { currentUser } = useContext(AuthContext);
-  // console.log(currentUser);
   const navigate = useNavigate();
 
-  // console.log(currentUser.photoURL);
   return (
     <>
       <nav className="navbar">
@@ -146,9 +144,8 @@ export default function Nav() {
               <img
                 className="profile-avatar"
                 src={
-                  currentUser.photoURL
-                    ? currentUser.photoURL
-                    : "blank-profile-picture-973460_1280.webp"
+                  currentUser.photoURL ||
+                  "blank-profile-picture-973460_1280.webp"
                 }
               />
               <svg
