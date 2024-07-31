@@ -122,3 +122,6 @@
   cursor: pointer;
   font-size: 18px;
 }
+.article-form .error {
+  color: #f0705a;
+}

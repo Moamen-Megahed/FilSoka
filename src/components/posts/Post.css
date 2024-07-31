@@ -36,6 +36,7 @@
   font-size: 28px;
   margin-bottom: 30px;
   cursor: pointer;
+  text-align: left;
 }
 .post-title:hover {
   text-decoration: underline;

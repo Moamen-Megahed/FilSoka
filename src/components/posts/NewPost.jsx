@@ -21,7 +21,7 @@ export default function NewPost({ addArticleHandler, isAdding }) {
             addArticleHandler(true);
           }}
         >
-          Add new article...
+          Wanna create new articel ?
         </div>
       )}
     </>

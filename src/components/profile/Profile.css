@@ -7,13 +7,13 @@
   border-radius: 10px;
   color: white;
 }
-.profile-header img {
+.profile-header .profile-img {
   width: 150px;
   height: 150px;
   border-radius: 8px;
   margin-bottom: 15px;
 }
-.profile-header h2 {
+.profile-header .user-name {
   font-size: 24px;
   margin: 0;
 }
@@ -59,4 +59,14 @@
 }
 .change-img-container .upload-btn {
   color: #0095f6;
+}
+
+.uploading-message {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #0095f6;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
 }

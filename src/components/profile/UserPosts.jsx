@@ -18,6 +18,11 @@ export default function UserPosts() {
 
   const { posts } = useContext(AuthContext);
 
+  if (posts.filter((p) => p.data?.uid == params.userId).length == 0) {
+    return <div className="no-posts">No Posts Yet</div>;
+  }
+
+  // console.log();
   // console.log(currentUser.id == params.userId);
 
   //   filterdPosts
