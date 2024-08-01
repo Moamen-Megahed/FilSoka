@@ -75,11 +75,105 @@ body {
   }
 }
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   #root {
     display: none;
   }
   .not-responsive {
     display: block;
+  }
+} */
+@media (max-width: 1000px) {
+  .pagination-container {
+    width: auto;
+  }
+}
+@media (max-width: 730px) {
+  .new-article {
+    width: 300px;
+  }
+  .posts {
+    max-width: 500px;
+  }
+  .post {
+    flex-direction: column;
+  }
+  .post-image {
+    width: 95%;
+  }
+  .post-title {
+    font-size: 19px;
+  }
+  .nav-left a {
+    font-size: 28px;
+  }
+  .nav-center {
+    padding: 0;
+  }
+  .search-input {
+    padding: 10px;
+  }
+  .nav-right svg {
+    font-size: 24px;
+  }
+  .profile-avatar {
+    width: 40px;
+  }
+  .signup-login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .nav-right {
+    gap: 5px;
+  }
+  .nav-right .signup-btn,
+  .nav-right .login-btn {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+  .login-right input[type="text"],
+  .login-right input[type="password"],
+  .login-right input[type="email"] {
+    font-size: 18px;
+    width: auto;
+  }
+}
+
+@media (max-width: 570px) {
+  .nav-center {
+    width: 150px;
+  }
+  .search-icon {
+    margin: 5px;
+  }
+  .search-input {
+    padding: 5px;
+    font-size: 16px;
+  }
+  .nav-right {
+    gap: 10px;
+  }
+  .post-info {
+    align-items: center;
+  }
+  .post-title {
+    font-size: 16px;
+    max-width: 330px;
+  }
+  .profile-name {
+    font-size: 14px;
+  }
+  .post-date {
+    font-size: 12px;
+  }
+  .formImg {
+    width: 150px;
+  }
+  .login-left {
+    display: none;
+  }
+  .login-right {
+    width: 100%;
   }
 }
