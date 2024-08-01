@@ -141,8 +141,11 @@ body {
 }
 
 @media (max-width: 570px) {
+  .navbar {
+    padding: 10px 10px 0;
+  }
   .nav-center {
-    width: 150px;
+    width: 120px;
   }
   .search-icon {
     margin: 5px;
@@ -175,5 +178,25 @@ body {
   }
   .login-right {
     width: 100%;
+  }
+  .postDetails-title {
+    font-size: 28px;
+  }
+  .postDetails-body {
+    width: 80%;
+  }
+  .postDetails-paragraph {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .postDetails-publisher {
+    font-size: 12px;
+  }
+  .postDetails-image {
+    width: 90%;
+  }
+  .nav-right svg {
+    display: none;
   }
 }
