@@ -6,7 +6,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { AuthContext } from "../../context/AuthContext";
 import Pagination from "../pagination/Pagination";
 
-export default function Posts() {
+export default function Posts({ searchTerm }) {
   const { posts } = useContext(AuthContext);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 5;
@@ -15,7 +15,15 @@ export default function Posts() {
   //   return <div style={{ color: "white" }}>Loading...</div>;
   // }
 
-  const sortedPosts = posts.sort((a, b) => b.data.timestamp - a.data.timestamp);
+  const filteredPosts = searchTerm
+    ? posts.filter((post) =>
+        post.data.articleInput.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : posts;
+
+  const sortedPosts = filteredPosts.sort(
+    (a, b) => b.data.timestamp - a.data.timestamp
+  );
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -33,7 +41,7 @@ export default function Posts() {
       </div>
       <Pagination
         postsPerPage={postsPerPage}
-        totalPosts={posts.length}
+        totalPosts={filteredPosts.length}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />

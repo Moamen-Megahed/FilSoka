@@ -7,13 +7,15 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import PostDetailsPage from "./pages/PostDetailsPage.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import { useState } from "react";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
-      <Nav />
+      <Nav setSearchTerm={setSearchTerm} />
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/" element={<HomePage searchTerm={searchTerm} />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/profile/:userId" element={<ProfilePage />}></Route>

@@ -108,12 +108,15 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { AiFillHome } from "react-icons/ai";
 
-export default function Nav() {
+export default function Nav({ setSearchTerm }) {
   const dropdownRef = useRef();
+
   const showContent = () => {
     dropdownRef.current.classList.toggle("show-flex");
   };
-  const { currentUser } = useContext(AuthContext);
+
+  const { currentUser, posts } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   return (
@@ -133,6 +136,9 @@ export default function Nav() {
             id="search"
             placeholder="Search"
             className="search-input"
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+            }}
           />
         </div>
         <div className="nav-right">

@@ -6,7 +6,7 @@ import "./HomePage.css";
 import { AuthContext } from "../context/AuthContext";
 import ReactDOM from "react-dom";
 
-export default function HomePage() {
+export default function HomePage({ searchTerm }) {
   const [isAdding, setIsAdding] = useState(false);
   const { loadingUser, loadingPosts } = useContext(AuthContext);
 
@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <div className="home">
       <NewPost isAdding={isAdding} addArticleHandler={addArticleHandler} />
-      <Posts />
+      <Posts searchTerm={searchTerm} />
       {ReactDOM.createPortal(
         <div className="not-responsive">{`Sorry It's Not Responsive Yet :(`}</div>,
         document.getElementById("overlays")
