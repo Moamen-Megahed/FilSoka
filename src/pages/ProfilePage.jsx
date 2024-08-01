@@ -3,7 +3,7 @@ import Profile from "../components/profile/Profile";
 import { AuthContext } from "../context/AuthContext";
 import ReactDOM from "react-dom";
 
-export default function ProfilePage() {
+export default function ProfilePage({ searchTerm }) {
   const { loadingUser, loadingPosts } = useContext(AuthContext);
 
   if (loadingUser || loadingPosts) {
@@ -23,7 +23,7 @@ export default function ProfilePage() {
   }
   return (
     <>
-      <Profile />
+      <Profile searchTerm={searchTerm} />
       {ReactDOM.createPortal(
         <div className="not-responsive">{`Sorry It's Not Responsive Yet :(`}</div>,
         document.getElementById("overlays")

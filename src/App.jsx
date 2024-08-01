@@ -18,7 +18,10 @@ function App() {
         <Route path="/" element={<HomePage searchTerm={searchTerm} />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/signup" element={<SignUpPage />}></Route>
-        <Route path="/profile/:userId" element={<ProfilePage />}></Route>
+        <Route
+          path="/profile/:userId"
+          element={<ProfilePage searchTerm={searchTerm} />}
+        ></Route>
         <Route path="/posts/:postId" element={<PostDetailsPage />}></Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

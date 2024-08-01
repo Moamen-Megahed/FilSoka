@@ -473,7 +473,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import Cropper from "react-easy-crop";
 import getCroppedImg from "./cropImage"; // Ensure you have this utility
 
-export default function Profile() {
+export default function Profile({ searchTerm }) {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
@@ -688,7 +688,7 @@ export default function Profile() {
         <h2>{user.uName}</h2>
         <p>Joined At {creationTime}</p>
 
-        <UserPosts />
+        <UserPosts searchTerm={searchTerm} />
       </div>
     </div>
   );

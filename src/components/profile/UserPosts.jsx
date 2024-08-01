@@ -13,7 +13,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { Link, useParams } from "react-router-dom";
 import Post from "../posts/Post";
 
-export default function UserPosts() {
+export default function UserPosts({ searchTerm }) {
   const params = useParams();
 
   const { posts } = useContext(AuthContext);
@@ -21,6 +21,12 @@ export default function UserPosts() {
   if (posts.filter((p) => p.data?.uid == params.userId).length == 0) {
     return <div className="no-posts">No Posts Yet</div>;
   }
+
+  const filteredPosts = searchTerm
+    ? posts.filter((post) =>
+        post.data.articleInput.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : posts;
 
   // console.log();
   // console.log(currentUser.id == params.userId);
@@ -49,7 +55,7 @@ export default function UserPosts() {
 
   return (
     <div className="posts">
-      {posts
+      {filteredPosts
         .filter((p) => p.data?.uid == params.userId)
         .sort((a, b) => b.data.timestamp - a.data.timestamp)
         .map((post) => (
