@@ -326,8 +326,7 @@ export default function SignUp() {
       await createUserWithEmailAndPassword(auth, email, password);
 
       await updateProfile(auth.currentUser, {
-        displayName: uName,
-        // Remove photoURL as it's not used
+        uName: uName,
       });
 
       await setDoc(doc(db, "users", auth.currentUser.uid), {
