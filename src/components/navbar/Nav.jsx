@@ -107,6 +107,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { AiFillHome } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 export default function Nav({ setSearchTerm }) {
   const dropdownRef = useRef();
@@ -119,6 +120,11 @@ export default function Nav({ setSearchTerm }) {
 
   const navigate = useNavigate();
 
+  const location = useLocation(); //
+  const hidePaths = ["/login", "/signup"];
+  const shouldHide = hidePaths.includes(location.pathname);
+  console.log(shouldHide);
+
   return (
     <>
       <nav className="navbar">
@@ -127,20 +133,22 @@ export default function Nav({ setSearchTerm }) {
             <Link to="/">FilSoka.</Link>
           </h1>
         </div>
-        <div className="nav-center">
-          <CiSearch className="search-icon" />
-          <input
-            autoComplete="off"
-            type="text"
-            name="search"
-            id="search"
-            placeholder="Search"
-            className="search-input"
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-            }}
-          />
-        </div>
+        {!shouldHide && (
+          <div className="nav-center">
+            <CiSearch className="search-icon" />
+            <input
+              autoComplete="off"
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search"
+              className="search-input"
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+            />
+          </div>
+        )}
         <div className="nav-right">
           <Link to={"/"}>
             <AiFillHome />
