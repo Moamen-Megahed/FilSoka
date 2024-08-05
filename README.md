@@ -25,7 +25,8 @@
 
 📹 Watch the video walkthrough of filSoka and its key features below:
 
-[Watch the video]([https://www.linkedin.com/posts/your-video-link](https://www.linkedin.com/posts/moamen-megahed_react-webdevelopment-firstproject-activity-7225537035225239555-U8ZY?utm_source=share&utm_medium=member_desktop))
+[Watch the video](https://www.linkedin.com/posts/moamen-megahed_react-webdevelopment-firstproject-activity-7225537035225239555-U8ZY?utm_source=share&utm_medium=member_desktop)
+
 ## Feedback
 
 Feel free to provide feedback or suggestions!
